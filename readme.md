@@ -159,6 +159,21 @@ Table: urls
 | short_code | String |
 | created_at | Timestamp |
 
+## Screenshots
+
+Swagger UI:
+
+![alt text](docs/swagger-ui.png)
+
+![alt text](docs/image-3.png)
+
+![alt text](docs/image-4.png)
+
+
+Database:
+
+![alt text](docs/database.png)
+
 ---
 
 ## Author
