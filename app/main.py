@@ -56,3 +56,29 @@ def redirect(
         url=url,
         status_code=307
     )
+
+from app.models import URL
+
+@app.get("/stats/{short_code}")
+def get_stats(
+    short_code: str,
+    db: Session = Depends(get_db)
+):
+    url = (
+        db.query(URL)
+        .filter(URL.short_code == short_code)
+        .first()
+    )
+
+    if not url:
+        raise HTTPException(
+            status_code=404,
+            detail="Short URL not found"
+        )
+
+    return {
+        "original_url": url.original_url,
+        "short_code": url.short_code,
+        "click_count": url.click_count,
+        "created_at": url.created_at
+    }

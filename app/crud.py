@@ -48,13 +48,18 @@ def create_short_url(db: Session, original_url: str):
 
 
 def get_original_url(db: Session, short_code: str):
+
     url = (
         db.query(URL)
         .filter(URL.short_code == short_code)
         .first()
     )
 
-    if url:
-        return url.original_url
+    if not url:
+        return None
 
-    return None
+    # Increment click count
+    url.click_count += 1
+    db.commit()
+
+    return url.original_url
