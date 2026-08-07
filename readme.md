@@ -241,6 +241,10 @@ Add the following screenshots inside the `docs/` folder and reference them here:
 
 ![Postman](docs/postman.png)
 
+### GET /{short_code} (Postman)
+
+![Postman](docs/getredirect.png)
+
 ### URL Statistics Endpoint
 
 ![Stats](docs/stats.png)
@@ -263,6 +267,3 @@ Add the following screenshots inside the `docs/` folder and reference them here:
 
 ---
 
-# Author
-
-**Sonali Sharma**
